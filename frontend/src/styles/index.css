@@ -1,0 +1,323 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Pretendard Variable', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  font-feature-settings: 'ss10', 'tnum';
+  color: #0f172a;
+  background: #f8fafc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.risk-overview {
+  grid-template-columns: 1fr;
+}
+
+.risk-summary-card {
+  min-width: 0;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.risk-summary-title {
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .risk-overview {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .risk-overview {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  35% {
+    transform: translateX(-4px);
+  }
+
+  70% {
+    transform: translateX(4px);
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 14mm;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .print-hidden {
+    display: none !important;
+  }
+
+  body {
+    color: #0f172a !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  .print-report {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  .print-report .report-title-card {
+    border: 0 !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+    border-radius: 0 !important;
+    padding: 0 0 7mm !important;
+    margin: 0 0 7mm !important;
+    background: white !important;
+  }
+
+  .print-report .report-title-card h1 {
+    font-size: 22pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-report .report-title-card p {
+    font-size: 10pt !important;
+  }
+
+  .print-report .report-layout,
+  .print-report .report-content {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .print-report .report-content {
+    gap: 0 !important;
+  }
+
+  .print-section {
+    width: 100% !important;
+    margin: 0 0 8mm !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border-color: #cbd5e1 !important;
+    border-radius: 8px !important;
+    background-color: white !important;
+    padding: 5mm !important;
+  }
+
+  .print-report h2 {
+    font-size: 15pt !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+  }
+
+  .print-report h3 {
+    font-size: 12pt !important;
+  }
+
+  .print-report p,
+  .print-report li,
+  .print-report span,
+  .print-report dd,
+  .print-report dt,
+  .print-report blockquote {
+    font-size: 9.5pt !important;
+    line-height: 1.45 !important;
+  }
+
+  .print-report .risk-overview {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 4mm !important;
+    width: 100% !important;
+  }
+
+  .print-report .risk-overview article {
+    padding: 4.5mm !important;
+    min-height: 25mm !important;
+    min-width: 0 !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+  }
+
+  .print-report svg,
+  .print-report [data-lucide] {
+    display: inline-block !important;
+    visibility: visible !important;
+    width: 16px !important;
+    height: 16px !important;
+    flex: 0 0 auto !important;
+  }
+
+  .print-report .risk-summary-card {
+    background-color: inherit !important;
+  }
+
+  .print-report .risk-summary-high {
+    background: #fef2f2 !important;
+    border-color: #fecaca !important;
+    color: #991b1b !important;
+  }
+
+  .print-report .risk-summary-medium {
+    background: #fffbeb !important;
+    border-color: #fde68a !important;
+    color: #92400e !important;
+  }
+
+  .print-report .risk-summary-low {
+    background: #eff6ff !important;
+    border-color: #bfdbfe !important;
+    color: #1e40af !important;
+  }
+
+  .print-report .risk-summary-icon {
+    width: 9mm !important;
+    height: 9mm !important;
+    border-radius: 6px !important;
+    background: rgba(255, 255, 255, 0.78) !important;
+  }
+
+  .print-report .risk-summary-icon svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .print-report .risk-summary-count {
+    font-size: 14pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-report .risk-summary-title {
+    white-space: nowrap !important;
+  }
+
+  .print-report .summary-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 3mm !important;
+  }
+
+  .print-report .stage-timeline {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 4mm !important;
+  }
+
+  .print-report .summary-grid > div,
+  .print-report label,
+  .print-report .risk-card,
+  .print-report blockquote {
+    border-color: #cbd5e1 !important;
+  }
+
+  .print-report label {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    padding: 3mm !important;
+  }
+
+  .print-report input[type='checkbox'] {
+    width: 4mm !important;
+    height: 4mm !important;
+    flex: 0 0 auto !important;
+  }
+
+  .print-report .risk-card {
+    margin: 0 0 5mm !important;
+    padding: 5mm !important;
+  }
+
+  .print-report article,
+  .print-report .stage-timeline > article {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-report .risk-card:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .print-report blockquote {
+    background: #f8fafc !important;
+    border-left-color: #0f172a !important;
+  }
+
+  .print-report .bg-amber-50\/90,
+  .print-report .bg-amber-50 {
+    background: #fffbeb !important;
+  }
+
+  .print-report .bg-slate-50,
+  .print-report .bg-slate-50\/80 {
+    background: #f8fafc !important;
+  }
+
+  .print-report .rounded-3xl,
+  .print-report .rounded-2xl,
+  .print-report .rounded-xl {
+    border-radius: 8px !important;
+  }
+
+  .print-report .space-y-8 > :not([hidden]) ~ :not([hidden]),
+  .print-report .space-y-5 > :not([hidden]) ~ :not([hidden]),
+  .print-report .space-y-4 > :not([hidden]) ~ :not([hidden]),
+  .print-report .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 4mm !important;
+  }
+}
