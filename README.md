@@ -35,7 +35,7 @@
 
   ```bash
   cd backend
-  python -m venv .venv
+  python3 -m venv .venv
   source .venv/bin/activate    # Windows: .venv\Scripts\activate
   pip install -r requirements.txt
   cd ..
